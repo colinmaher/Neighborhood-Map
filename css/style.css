@@ -1,0 +1,9 @@
+html,body {height: 100%; margin: 0; padding:0}
+#map{
+    width: 500px;
+    height: 400px;
+}
+#heading{
+    font-family: 'Arial';
+    font-size : 16px;
+}
