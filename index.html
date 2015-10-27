@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Map Project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">       
+    </head>
+    <body>
+        <div class = "row">
+            <h2>Neighborhood Map Project</h2>
+            <form id="filter-form">
+                <label for="typeList">Select location type: </label>
+                <select id="typeList" data-bind="options: locationTypes, value: chosenLocation "></select>
+            </form>
+        </div>
+        <div>
+            <ul data-bind="foreach: locations">
+                <li>
+
+                </li>
+            </ul>
+        </div>
+        <div id="map"></div> 
+        <script src="lib/knockout.js"></script>
+        <script src="lib/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
