@@ -2,29 +2,43 @@
 <html lang="en">
     <head>
         <title>Map Project</title>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/style.css">       
+        <link rel="stylesheet"  href="css/style.css">
+        <link rel="stylesheet"  href="css/bootstrap.min.css">
+        <script>
+            function googleError() {
+                alert("Google Maps API failed to load");
+            }
+        </script>
+        <script src="js/app.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initialize" onerror="googleError()" async defer></script>
+        
     </head>
     <body>
-        <div class = "row">
-            <h2>Neighborhood Map Project</h2>
-            <form id="filter-form">
-                <label for="typeList">Select location type: </label>
-                <select id="typeList" data-bind="options: locationTypes, value: chosenLocation "></select>
-            </form>
+        <div class ="container-fluid" >
+            <div id= "heading" class = "row">
+                <h2>Restaurants in Berkeley, CA</h2>
+                <form id="filter-form">
+                    <input placeholder="Search…" type="search" data-bind="textInput: query, event: {keyup: changeMarkers}" autocomplete="off">
+                </form>
+            </div>
+            <div class = "row">
+                <div class=" col-xs-12 col-sm-4 col-md-3" id="list_container">
+                    <ul class = "col-md-12" id="list" data-bind="foreach: filteredLocations">
+                        <li id = "list-element">
+                            <a href ="#" data-bind = "text: name, click: $parent.centerMap"></a>               
+                        </li>
+                    </ul>
+                </div>
+                <div class =" col-xs-12 col-sm-8 col-md-9" id="map_container">
+                    <div id="map"></div>
+                </div>
+            </div>
         </div>
-        <div>
-            <ul data-bind="foreach: locations">
-                <li>
-
-                </li>
-            </ul>
-        </div>
-        <div id="map"></div> 
+        <script src="lib/oauth-signature.min.js"></script>
         <script src="lib/knockout.js"></script>
-        <script src="lib/jquery.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-        <script src="js/app.js"></script>
+        <script src="lib/jquery.min.js"></script> 
+        
     </body>
 </html>
