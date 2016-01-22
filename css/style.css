@@ -1,9 +1,62 @@
-html,body {height: 100%; margin: 0; padding:0}
-#map{
-    width: 500px;
-    height: 400px;
+@media screen and (max-width: 600px){
+    #map {
+       min-height: 400px;
+    }  
 }
-#heading{
+
+html {
+    height: 100%; 
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#map_container {
+    position: relative;
+    height: 100%
+}
+
+#map { 
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 60%;
+}
+
+#list_container {
+    height: 100%;
+}
+
+#list {
+    list-style-type: none; 
+    height: 85vh;
+    width: 100%;
+    overflow: auto;
+}
+
+#list-element {
+    width: 100%;
+    font-size: 14px;
+    color: #2F576E;
+    background-color: #b2cccc;
+    border: 1px solid #2F576E;
+    padding: 10px 20px 10px 10px;
+}
+
+#heading {
+    background-color: #FFF;
+    color: #000;
     font-family: 'Arial';
-    font-size : 16px;
+    font-size: 16px;
+    padding-left: 30px;
+    padding-bottom: 10px;
 }
