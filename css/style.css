@@ -1,19 +1,10 @@
-@media screen and (max-width: 600px){
-    #map {
-       min-height: 400px;
-    }  
-}
-
-html {
+html, body {
     height: 100%; 
+    width: 100%;
     margin: 0px;
     padding: 0px;
-}
-
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    background-image: none;
+    background: #204d74 !important;
 }
 
 
@@ -23,7 +14,10 @@ body {
 }
 
 #map { 
-    height: 60vh;
+    height: 100%;
+    width: 100%;
+    float: right;
+    min-height: 600px;
     position: absolute;
     top: 0;
     right: 0;
@@ -32,31 +26,71 @@ body {
     padding-bottom: 60%;
 }
 
-#list_container {
-    height: 100%;
+.list_container {
+    height: 90%;
+    padding-top: 25px;
+    overflow: hidden;
 }
 
-#list {
+.list {
     list-style-type: none; 
-    height: 85vh;
-    width: 100%;
+
     overflow: auto;
 }
 
-#list-element {
+.list-element {
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
     color: #2F576E;
-    background-color: #b2cccc;
+    background-color: #B4F1F1 !important;
     border: 1px solid #2F576E;
     padding: 10px 20px 10px 10px;
 }
 
 #heading {
-    background-color: #FFF;
-    color: #000;
-    font-family: 'Arial';
+    background-color: #2D767F  !important;
+    color: #ECFFFB;
+    font-family: 'Verdana';
     font-size: 16px;
     padding-left: 30px;
     padding-bottom: 10px;
+}
+#search{
+    color: #000;
+}
+
+.hamburger{
+    cursor: pointer;
+    padding: 15px;
+    display: none;
+    float: right;
+}
+
+.line{
+    border-bottom: 4px solid #bbb;
+    width: 35px;
+    margin-bottom: 6px;
+}
+
+.line:last-child{
+    margin-bottom: 0;
+}
+.location{
+    
+}
+
+@media screen and (max-width: 800px){ 
+    nav li{
+        width: 100%;
+    }
+    .list_container{
+        height: 0;
+        overflow: auto;
+    }
+    .hamburger{
+        display: inline;
+    }
+    .open{
+        height: 100%;
+    }
 }
