@@ -12,26 +12,36 @@
             }
         </script>
         <script src="js/app.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initialize" onerror="googleError()" async defer></script>
         
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initialize" onerror="googleError()" async defer></script>
+
     </head>
     <body>
         <div class ="container-fluid" >
             <div id= "heading" class = "row">
                 <h2>Restaurants in Berkeley, CA</h2>
-                <form id="filter-form">
+                <div class="hamburger">
+                    <div class = "line"></div>
+                    <div class = "line"></div>
+                    <div class = "line"></div>
+                </div>
+                <form id="search">
                     <input placeholder="Search…" type="search" data-bind="textInput: query, event: {keyup: changeMarkers}" autocomplete="off">
                 </form>
+                
             </div>
             <div class = "row">
-                <div class=" col-xs-12 col-sm-4 col-md-3" id="list_container">
-                    <ul class = "col-md-12" id="list" data-bind="foreach: filteredLocations">
-                        <li id = "list-element">
-                            <a href ="#" data-bind = "text: name, click: $parent.centerMap"></a>               
-                        </li>
-                    </ul>
-                </div>
-                <div class =" col-xs-12 col-sm-8 col-md-9" id="map_container">
+                <nav>
+                    <div class="col-sm-4 col-md-3 list_container">
+                        <ul class = "col-md-12 list"  data-bind="foreach: filteredLocations">
+                            <li class = "list-element">
+                                <a class="location" href ="#" data-bind = "text: name, click: $parent.centerMap"></a>               
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class =" col-sm-8 col-md-9" id="map_container">
                     <div id="map"></div>
                 </div>
             </div>
@@ -39,6 +49,7 @@
         <script src="lib/oauth-signature.min.js"></script>
         <script src="lib/knockout.js"></script>
         <script src="lib/jquery.min.js"></script> 
-        
+        <script src="js/menu.js"></script>
+
     </body>
 </html>
